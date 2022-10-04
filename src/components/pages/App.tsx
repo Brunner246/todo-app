@@ -25,8 +25,33 @@ export const App = () => {
           <input className="input" type="text" placeholder="Enter a task..." />
           <input className="button" type="button" value="Add" />
           <div className="options">
-            <input type="checkbox" id="show-all" name="showAll" value="false" />
-            <label>Show all</label>
+            <span className="option">
+              <input
+                type="checkbox"
+                id="show-open"
+                name="showOpen"
+                value="false"
+              />
+              <label>Open</label>
+            </span>
+            <span className="option">
+              <input
+                type="checkbox"
+                id="show-done"
+                name="showDone"
+                value="false"
+              />
+              <label>Done</label>
+            </span>
+            <span className="option">
+              <input
+                type="checkbox"
+                id="show-all"
+                name="showAll"
+                value="false"
+              />
+              <label>All</label>
+            </span>
           </div>
         </div>
         <div className="todo list">
