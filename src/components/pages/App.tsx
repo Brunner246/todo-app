@@ -39,24 +39,24 @@ export const App = () => {
   return (
     <div className="app">
       <AppBar />
-      <div className="content">
-        <TodoCreator
-          todos={todos}
-          addTodo={addTodo}
-          input={input}
-          setInput={setInput}
-          showAll={showAll}
-          setShowAll={setShowAll}
-          setSortAscending={setSortAscending}
-        />
-        <TodoList
-          todos={todos}
-          updateTodo={updateTodo}
-          removeTodo={removeTodo}
-          input={input}
-          showAll={showAll}
-          sortAscending={sortAscending}
-        />
+      <div className="page">
+          <TodoCreator
+            todos={todos}
+            addTodo={addTodo}
+            input={input}
+            setInput={setInput}
+            showAll={showAll}
+            setShowAll={setShowAll}
+            setSortAscending={setSortAscending}
+          />
+          <TodoList
+            todos={todos}
+            updateTodo={updateTodo}
+            removeTodo={removeTodo}
+            input={input}
+            showAll={showAll}
+            sortAscending={sortAscending}
+          />
       </div>
       <Footer />
     </div>

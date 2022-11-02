@@ -23,7 +23,9 @@ export const TodoList = ({
   const renderTodoItems = () => {
     // Filter for text input
     let filteredTodos = input
-      ? [...todos].filter(t => t.text.toLowerCase().includes(input.toLowerCase()))
+      ? [...todos].filter(t =>
+          t.text.toLowerCase().includes(input.toLowerCase())
+        )
       : todos
 
     // Handle show all checkbox
@@ -38,18 +40,13 @@ export const TodoList = ({
     )
 
     // Sort descending if checked.
-    if(!sortAscending) {
+    if (!sortAscending) {
       filteredTodos = filteredTodos.reverse()
     }
 
     // Sort and render
     return filteredTodos.map(t => (
-      <TodoItem
-        key={t.id}
-        todo={t}
-        updateTodo={updateTodo}
-        removeTodo={removeTodo}
-      />
+      <TodoItem todo={t} updateTodo={updateTodo} removeTodo={removeTodo} />
     ))
   }
 

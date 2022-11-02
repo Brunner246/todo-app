@@ -1,4 +1,6 @@
 import { Todo } from '../../models/Todo'
+import './Checkbox.css'
+import './CheckboxDone.css'
 
 interface Props {
   todo: Todo
@@ -10,10 +12,5 @@ export const CheckboxDone = ({ todo, updateTodo }: Props) => {
     updateTodo({ ...todo, done: !todo.done })
   }
 
-  return (
-    <label>
-      <input type="checkbox" onChange={updateDone} checked={todo.done} />
-      Done
-    </label>
-  )
+  return <input type="checkbox" onChange={updateDone} checked={todo.done} />
 }
