@@ -15,6 +15,7 @@ export const App = () => {
   ])
   const [input, setInput] = useState<string>('')
   const [showAll, setShowAll] = useState<boolean>(false)
+  const [sortAscending, setSortAscending] = useState<boolean>(true)
 
   const addTodo = (todo: Todo) => {
     setTodos([...todos, todo])
@@ -35,24 +36,6 @@ export const App = () => {
     )
   }
 
-  // TODO: sort just according to importance
-  const sortTodoAscending = () => {
-    let sortedTodosAscending = [...todos].sort(
-      (a, b) => a.importance - b.importance
-    )
-
-    setTodos(sortedTodosAscending)
-  }
-
-  // TODO: sort just according to importance
-  const sortTodoDescending = () => {
-    let sortedTodosAscending = [...todos].sort(
-      (a, b) => b.importance - a.importance
-    )
-
-    setTodos(sortedTodosAscending)
-  }
-
   return (
     <div className="app">
       <AppBar />
@@ -64,8 +47,7 @@ export const App = () => {
           setInput={setInput}
           showAll={showAll}
           setShowAll={setShowAll}
-          sortAscending={sortTodoAscending}
-          sortDescending={sortTodoDescending}
+          setSortAscending={setSortAscending}
         />
         <TodoList
           todos={todos}
@@ -73,6 +55,7 @@ export const App = () => {
           removeTodo={removeTodo}
           input={input}
           showAll={showAll}
+          sortAscending={sortAscending}
         />
       </div>
       <Footer />
