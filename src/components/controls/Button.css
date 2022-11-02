@@ -1,9 +1,12 @@
 .button {
-  font-size: 20px;
+  width: 100%;
+  font-size: 1.2em;
+  color: white;
+  font-weight: bold;
   padding: 5px 15px;
-  margin: 20px 0;
   opacity: 90%;
   border: none;
+  border-radius: 8px;
 }
 
 .button:hover {
@@ -19,31 +22,17 @@
 }
 
 .up {
-  padding: 8px;
-  margin: 3px;
-  border: none;
-  border-radius: 8px;
-  cursor: pointer;
-  outline: none;
-  background: linear-gradient(
-    90deg,
-    rgba(93, 12, 255, 1) 0%,
-    rgba(155, 0, 250, 1) 100%
-  );
-  color: black;
+  border-radius: 8px 0px 0px 8px;
+  background: linear-gradient(0deg,
+      #acbcda 0%,
+      #8faadc 25%,
+      #4a7ad4 100%);
 }
 
 .down {
-  padding: 8px;
-  margin: 3px;
-  border: none;
-  border-radius: 8px;
-  cursor: pointer;
-  outline: none;
-  background: linear-gradient(
-    90deg,
-    rgba(93, 12, 255, 1) 0%,
-    rgba(155, 0, 250, 1) 100%
-  );
-  color: black;
+  border-radius: 0px 8px 8px 0px;
+  background: linear-gradient(180deg,
+      #acbcda 0%,
+      #8faadc 25%,
+      #4a7ad4 100%);
 }
