@@ -1,6 +1,6 @@
 import { Button } from 'components/controls/Button'
 import { Checkbox } from 'components/controls/Checkbox'
-import { Input } from 'components/controls/Input'
+import { Input, InputState } from 'components/controls/Input'
 import { createTodo, Todo } from 'models/Todo'
 import { KeyboardEvent } from 'react'
 import './TodoCreator.css'
@@ -25,9 +25,10 @@ export const TodoCreator = ({
   setSortAscending,
 }: Props) => {
   const createAndAddTodo = () => {
-    if (input === '') return
-    addTodo(createTodo(input))
-    setInput('')
+    if (inputState === 'valid') {
+      addTodo(createTodo(input))
+      setInput('')
+    }
   }
 
   const handleKeyboardEvent = (event: KeyboardEvent<HTMLDivElement>) => {
@@ -36,10 +37,26 @@ export const TodoCreator = ({
     }
   }
 
+  const checkInputState = (): InputState => {
+    if (!input) {
+      return 'empty'
+    }
+    if (todos.map(t => t.text.toLowerCase()).includes(input.toLowerCase())) {
+      return 'invalid'
+    }
+    return 'valid'
+  }
+
+  let inputState = checkInputState()
+
   return (
     <div className="todo-creator" onKeyDown={handleKeyboardEvent}>
       <div className="todo-creator-input">
-        <Input input={input} setInput={setInput}></Input>
+        <Input
+          inputState={inputState}
+          input={input}
+          setInput={setInput}
+        ></Input>
       </div>
       <div className="todo-creator-add">
         <Button onClick={createAndAddTodo} buttonType="add">

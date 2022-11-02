@@ -1,21 +1,17 @@
 import './Input.css'
 
+export type InputState = 'empty' | 'valid' | 'invalid'
+
 interface Props {
+  inputState: InputState
   input: string
   setInput: (text: string) => void
 }
 
-export const Input = ({ input, setInput }: Props) => {
-  let inputClassName = 'input'
-  if (input) {
-    inputClassName += ' green'
-  } else {
-    inputClassName += ' red'
-  }
-
+export const Input = ({ inputState, input, setInput }: Props) => {
   return (
     <input
-      className={inputClassName}
+      className={`input ${inputState}`}
       value={input}
       onChange={e => {
         setInput(e.target.value)

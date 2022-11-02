@@ -3,7 +3,7 @@
     padding: 1% 30%;
     grid-template-columns: 12fr 1fr 1fr;
     grid-template-rows: 1fr 1fr;
-    grid-template-areas: 
+    grid-template-areas:
         'input add add'
         'options up down';
     align-items: center;

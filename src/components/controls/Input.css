@@ -6,10 +6,14 @@
     border-radius: 3px;
 }
 
-.green {
+.empty {
+    border: 3px solid #bcbcbc;
+}
+
+.valid {
     border: 3px solid #849324;
 }
 
-.red {
+.invalid {
     border: 3px solid #fd151b;
 }
