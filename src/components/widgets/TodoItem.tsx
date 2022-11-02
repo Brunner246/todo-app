@@ -1,10 +1,10 @@
 import './TodoItem.css'
 
-import { Todo } from '../../models/Todo'
 import { Button } from 'components/controls/Button'
-import { CheckboxDone } from 'components/controls/CheckboxDone'
-import { Priority } from './Priority'
+import { Checkbox } from 'components/controls/Checkbox'
 import { Fragment } from 'react'
+import { Todo } from '../../models/Todo'
+import { Priority } from './Priority'
 
 interface Props {
   todo: Todo
@@ -15,7 +15,11 @@ interface Props {
 export const TodoItem = ({ todo, updateTodo, removeTodo }: Props) => {
   return (
     <Fragment key={todo.id}>
-      <CheckboxDone todo={todo} updateTodo={updateTodo} />
+      <Checkbox
+        checkboxType="done"
+        onChange={() => updateTodo({ ...todo, done: !todo.done })}
+        checked={todo.done}
+      ></Checkbox>
       <Priority todo={todo} updateTodo={updateTodo}></Priority>
       <div className="todo-item-text">{todo.text}</div>
       <Button onClick={() => removeTodo(todo)} buttonType="remove">
