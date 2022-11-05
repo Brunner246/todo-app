@@ -1,11 +1,11 @@
 .flash {
-    color: rgba(0, 0, 0, 0.5);
+  color: white;
 }
 
 .checked {
-    color: rgba(0, 0, 0, 1);
+  color: #8faadc;
 }
 
 .flash:hover {
-    color: rgba(0, 0, 0, 1);
+  /* color: white; */
 }

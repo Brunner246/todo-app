@@ -1,5 +1,12 @@
 .todo-item-text {
-    padding: 0% 10%;
-    font-size: 1.3em;
-    justify-self: left;
+  width: 100%;
+  background: white;
+  border: 1px solid blue;
+  padding: 5px 15px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  color: black;
 }
