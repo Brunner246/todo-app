@@ -16,9 +16,13 @@ export const App = () => {
   const [input, setInput] = useState<string>('')
   const [showAll, setShowAll] = useState<boolean>(false)
   const [sortAscending, setSortAscending] = useState<boolean>(true)
+  const [todoItem, setTodoItem] = useState<Todo>()
+  const [editMode, setEditMode] = useState<boolean>(false)
+  const [todoId, setTodoId] = useState<string>('')
 
   const addTodo = (todo: Todo) => {
     setTodos([...todos, todo])
+    return
   }
 
   const removeTodo = (todo: Todo) => {
@@ -36,27 +40,42 @@ export const App = () => {
     )
   }
 
+  const editTask = (todo: Todo) => {
+    const updatedTasks = todos.map(task => {
+      if (todo.id === task.id) {
+        setEditMode(true)
+        setTodoId(task.id)
+        return { ...task } // , name: 'hans'
+      }
+      setTodoItem(task)
+      return task
+    })
+    setTodos(updatedTasks)
+  }
+
   return (
     <div className="app">
       <AppBar />
       <div className="page">
-          <TodoCreator
-            todos={todos}
-            addTodo={addTodo}
-            input={input}
-            setInput={setInput}
-            showAll={showAll}
-            setShowAll={setShowAll}
-            setSortAscending={setSortAscending}
-          />
-          <TodoList
-            todos={todos}
-            updateTodo={updateTodo}
-            removeTodo={removeTodo}
-            input={input}
-            showAll={showAll}
-            sortAscending={sortAscending}
-          />
+        <TodoCreator
+          todos={todos}
+          addTodo={addTodo}
+          input={input}
+          setInput={setInput}
+          showAll={showAll}
+          setShowAll={setShowAll}
+          setSortAscending={setSortAscending}
+        />
+        <TodoList
+          todos={todos}
+          updateTodo={updateTodo}
+          removeTodo={removeTodo}
+          input={input}
+          showAll={showAll}
+          sortAscending={sortAscending}
+          editTodo={editTask}
+          editMode={editMode}
+        />
       </div>
       <Footer />
     </div>

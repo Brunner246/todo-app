@@ -1,6 +1,7 @@
 import { Todo } from '../../models/Todo'
 import { TodoItem } from './TodoItem'
 import './TodoList.css'
+import { useState } from 'react'
 
 interface Props {
   todos: Todo[]
@@ -9,6 +10,8 @@ interface Props {
   input: string
   showAll: boolean
   sortAscending: boolean
+  editTodo: (todo: Todo) => void
+  editMode: boolean
 }
 
 export const TodoList = ({
@@ -18,6 +21,8 @@ export const TodoList = ({
   input,
   showAll,
   sortAscending,
+  editTodo,
+  editMode,
 }: Props) => {
   // TODO: Ugly... define filter first and then apply them, not enough time =)
   const renderTodoItems = () => {
@@ -46,11 +51,72 @@ export const TodoList = ({
 
     // Sort and render
     return filteredTodos.map(t => (
-      <TodoItem todo={t} updateTodo={updateTodo} removeTodo={removeTodo} />
+      <TodoItem
+        todo={t}
+        updateTodo={updateTodo}
+        removeTodo={removeTodo}
+        editTodo={editTodo}
+      />
     ))
   }
 
+  const [todoId, setTodoId] = useState<string>('')
+  const handleSubmit = () => {
+    console.log('handling submit')
+    todos.map(t => {
+      if (todoId === t.id) {
+        return { ...t, text: 'helllllll' }
+      }
+      return (
+        <TodoItem
+          todo={t}
+          updateTodo={updateTodo}
+          removeTodo={removeTodo}
+          editTodo={editTodo}
+        />
+      )
+    })
+  }
+
+  const handleChange = () => {
+    console.log('change')
+  }
+
+  const editingTemplate = (
+    <form className="stack-small" onSubmit={handleSubmit}>
+      <div className="form-group">
+        <label className="todo-label"></label>
+        <input type="text" value={'hello world'} onChange={handleChange} />
+      </div>
+      <div className="btn-group">
+        <button
+          type="button"
+          className="btn todo-cancel"
+          onClick={() => {
+            // setNewName(props.name);
+            // setEditing(false);
+          }}
+        >
+          Cancel
+        </button>
+        <button
+          type="submit"
+          onClick={() => {
+            // props.editTask(props.id, newName);
+            // setEditing(false);
+          }}
+        >
+          Save
+        </button>
+      </div>
+    </form>
+  )
+
   const todoList = renderTodoItems()
 
-  return <div className="todo-list">{todoList}</div>
+  return editMode ? (
+    editingTemplate
+  ) : (
+    <div className="todo-list">{todoList}</div>
+  )
 }
