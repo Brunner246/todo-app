@@ -2,9 +2,8 @@ import { Button } from 'components/controls/Button'
 import { Checkbox } from 'components/controls/Checkbox'
 import { Input, InputState } from 'components/controls/Input'
 import { createTodo, Todo } from 'models/Todo'
-import { ChangeEvent, KeyboardEvent } from 'react'
+import { KeyboardEvent } from 'react'
 import './TodoCreator.css'
-import { useState } from 'react'
 
 interface Props {
   todos: Todo[]
@@ -24,16 +23,13 @@ export const TodoCreator = ({
   showAll,
   setShowAll,
   setSortAscending,
-}: // updateEditText,
-Props) => {
+}: Props) => {
   const createAndAddTodo = () => {
     if (inputState === 'valid') {
-      console.log('add')
       addTodo(createTodo(input))
       setInput('')
       return
     }
-    setInput('')
   }
 
   const handleKeyboardEvent = (event: KeyboardEvent<HTMLDivElement>) => {
@@ -54,7 +50,7 @@ Props) => {
 
   let inputState = checkInputState()
 
-  const viewTemplate = (
+  return (
     <div className="todo-creator" onKeyDown={handleKeyboardEvent}>
       <div className="todo-creator-input">
         <Input
@@ -65,7 +61,7 @@ Props) => {
       </div>
       <div className="todo-creator-add">
         <Button onClick={createAndAddTodo} buttonType="add">
-          Add
+          ➕
         </Button>
       </div>
       <div className="todo-creator-options">
@@ -91,5 +87,4 @@ Props) => {
       </div>
     </div>
   )
-  return viewTemplate
 }

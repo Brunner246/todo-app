@@ -16,9 +16,6 @@ export const App = () => {
   const [input, setInput] = useState<string>('')
   const [showAll, setShowAll] = useState<boolean>(false)
   const [sortAscending, setSortAscending] = useState<boolean>(true)
-  const [todoItem, setTodoItem] = useState<Todo>()
-  const [editMode, setEditMode] = useState<boolean>(false)
-  const [todoId, setTodoId] = useState<string>('')
 
   const addTodo = (todo: Todo) => {
     setTodos([...todos, todo])
@@ -38,19 +35,6 @@ export const App = () => {
         return current
       })
     )
-  }
-
-  const editTask = (todo: Todo) => {
-    const updatedTasks = todos.map(task => {
-      if (todo.id === task.id) {
-        setEditMode(true)
-        setTodoId(task.id)
-        return { ...task } // , name: 'hans'
-      }
-      setTodoItem(task)
-      return task
-    })
-    setTodos(updatedTasks)
   }
 
   return (
@@ -73,8 +57,6 @@ export const App = () => {
           input={input}
           showAll={showAll}
           sortAscending={sortAscending}
-          editTodo={editTask}
-          editMode={editMode}
         />
       </div>
       <Footer />

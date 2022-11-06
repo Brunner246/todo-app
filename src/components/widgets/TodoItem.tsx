@@ -10,10 +10,9 @@ interface Props {
   todo: Todo
   updateTodo: (todo: Todo) => void
   removeTodo: (todo: Todo) => void
-  editTodo: (todo: Todo) => void
 }
 
-export const TodoItem = ({ todo, updateTodo, removeTodo, editTodo }: Props) => {
+export const TodoItem = ({ todo, updateTodo, removeTodo }: Props) => {
   return (
     <Fragment key={todo.id}>
       <Checkbox
@@ -24,10 +23,7 @@ export const TodoItem = ({ todo, updateTodo, removeTodo, editTodo }: Props) => {
       <Priority todo={todo} updateTodo={updateTodo}></Priority>
       <div className="todo-item-text">{todo.text}</div>
       <Button onClick={() => removeTodo(todo)} buttonType="remove">
-        Remove
-      </Button>
-      <Button onClick={() => editTodo(todo)} buttonType="edit">
-        Edit
+        ⛔
       </Button>
     </Fragment>
   )
