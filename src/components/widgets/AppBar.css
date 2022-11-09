@@ -1,7 +1,8 @@
 .appBar {
-  padding: 20px;
-  background: #264653;
-  color: #fff;
-  font-size: 1.6em;
-  font-weight: bold;
+  background: #0d0d0d;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 200px;
+  position: relative;
 }

@@ -19,6 +19,7 @@ export const App = () => {
 
   const addTodo = (todo: Todo) => {
     setTodos([...todos, todo])
+    return
   }
 
   const removeTodo = (todo: Todo) => {
@@ -40,23 +41,23 @@ export const App = () => {
     <div className="app">
       <AppBar />
       <div className="page">
-          <TodoCreator
-            todos={todos}
-            addTodo={addTodo}
-            input={input}
-            setInput={setInput}
-            showAll={showAll}
-            setShowAll={setShowAll}
-            setSortAscending={setSortAscending}
-          />
-          <TodoList
-            todos={todos}
-            updateTodo={updateTodo}
-            removeTodo={removeTodo}
-            input={input}
-            showAll={showAll}
-            sortAscending={sortAscending}
-          />
+        <TodoCreator
+          todos={todos}
+          addTodo={addTodo}
+          input={input}
+          setInput={setInput}
+          showAll={showAll}
+          setShowAll={setShowAll}
+          setSortAscending={setSortAscending}
+        />
+        <TodoList
+          todos={todos}
+          updateTodo={updateTodo}
+          removeTodo={removeTodo}
+          input={input}
+          showAll={showAll}
+          sortAscending={sortAscending}
+        />
       </div>
       <Footer />
     </div>

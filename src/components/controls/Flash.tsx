@@ -12,6 +12,11 @@ interface Props {
 export const Flash = ({ id, todo, updateTodo }: Props) => {
   const [checked, setChecked] = useState<boolean>(id <= todo.importance)
 
+  const buttonHandler = (event: React.MouseEvent<HTMLButtonElement>) => {
+    event.preventDefault()
+    change()
+  }
+
   const change = () => {
     if (checked) {
       updateTodo({ ...todo, importance: parseImportance(id) })
@@ -24,7 +29,7 @@ export const Flash = ({ id, todo, updateTodo }: Props) => {
   return (
     <span
       className={`flash${id <= todo.importance ? ' checked' : ''}`}
-      onClick={change}
+      onClick={buttonHandler}
     >
       &#8623;
     </span>

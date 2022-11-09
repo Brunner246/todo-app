@@ -46,7 +46,12 @@ export const TodoList = ({
 
     // Sort and render
     return filteredTodos.map(t => (
-      <TodoItem todo={t} updateTodo={updateTodo} removeTodo={removeTodo} />
+      <TodoItem
+        todo={t}
+        updateTodo={updateTodo}
+        removeTodo={removeTodo}
+        key={t.id}
+      />
     ))
   }
 

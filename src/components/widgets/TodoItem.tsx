@@ -23,7 +23,7 @@ export const TodoItem = ({ todo, updateTodo, removeTodo }: Props) => {
       <Priority todo={todo} updateTodo={updateTodo}></Priority>
       <div className="todo-item-text">{todo.text}</div>
       <Button onClick={() => removeTodo(todo)} buttonType="remove">
-        Remove
+        ⛔
       </Button>
     </Fragment>
   )

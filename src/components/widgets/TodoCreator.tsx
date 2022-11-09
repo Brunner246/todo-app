@@ -28,6 +28,7 @@ export const TodoCreator = ({
     if (inputState === 'valid') {
       addTodo(createTodo(input))
       setInput('')
+      return
     }
   }
 
@@ -60,7 +61,7 @@ export const TodoCreator = ({
       </div>
       <div className="todo-creator-add">
         <Button onClick={createAndAddTodo} buttonType="add">
-          Add
+          ➕
         </Button>
       </div>
       <div className="todo-creator-options">
