@@ -1,11 +1,14 @@
 .symbol {
   color: white;
+  cursor: grab;
 }
 
 .checked {
   color: #8faadc;
+  cursor: grab;
 }
 
 .symbol:hover {
   color: #8faadc;
+  cursor: grab;
 }
