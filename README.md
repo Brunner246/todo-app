@@ -51,7 +51,7 @@ You don’t have to ever use `eject`. The curated feature set is suitable for sm
 
 ## Authors
 
-- Alexander Gassmann
+- Alexander Gassmann @gassmannalexander
 - Michael Brunner @Brunner246
 - Merlin Unterfinger @munterfi
 

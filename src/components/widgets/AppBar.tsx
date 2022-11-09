@@ -4,7 +4,7 @@ import './AppBar.css'
 export const AppBar = () => {
   return (
     <header className={'appBar'}>
-      <img src={Banner} alt="" />
+      <img src={Banner} className="banner" alt="" />
     </header>
   )
 }

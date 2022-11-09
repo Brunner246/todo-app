@@ -1,7 +1,6 @@
-import { parseImportance } from 'models/Importance'
-import { Todo } from 'models/Todo'
+import { parseImportance } from '../../models/Importance'
+import { Todo } from '../../models/Todo'
 import { Symbol } from '../controls/Symbol'
-
 import './Priority.css'
 
 interface Props {

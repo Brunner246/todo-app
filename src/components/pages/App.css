@@ -25,12 +25,4 @@ body {
   flex: 1;
   background: #191919e4;
   color: #f2f2f2;
-  /* min-height: 100vh; */
-}
-
-.content {
-  display: grid;
-  height: 100%;
-  width: 100%;
-  grid-template-rows: 1fr 6fr;
 }
