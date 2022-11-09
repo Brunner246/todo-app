@@ -19,19 +19,15 @@ export const TodoList = ({
   showAll,
   sortAscending,
 }: Props) => {
-  // TODO: Ugly... define filter first and then apply them, not enough time =)
   const renderTodoItems = () => {
-    // Filter for text input
     let filteredTodos = input
       ? [...todos].filter(t =>
           t.text.toLowerCase().includes(input.toLowerCase())
         )
       : todos
 
-    // Handle show all checkbox
     filteredTodos = showAll ? filteredTodos : filteredTodos.filter(t => !t.done)
 
-    // Sort according to done, importance and text
     filteredTodos = filteredTodos.sort(
       (t1, t2) =>
         Number(t1.done) - Number(t2.done) ||
@@ -39,12 +35,10 @@ export const TodoList = ({
         t1.text.localeCompare(t2.text)
     )
 
-    // Sort descending if checked.
     if (!sortAscending) {
       filteredTodos = filteredTodos.reverse()
     }
 
-    // Sort and render
     return filteredTodos.map(t => (
       <TodoItem
         todo={t}

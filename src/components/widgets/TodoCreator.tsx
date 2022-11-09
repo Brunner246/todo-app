@@ -1,8 +1,8 @@
-import { Button } from 'components/controls/Button'
-import { Checkbox } from 'components/controls/Checkbox'
-import { Input, InputState } from 'components/controls/Input'
-import { createTodo, Todo } from 'models/Todo'
 import { KeyboardEvent } from 'react'
+import { createTodo, Todo } from '../../models/Todo'
+import { Button } from '../controls/Button'
+import { Checkbox } from '../controls/Checkbox'
+import { Input, InputState } from '../controls/Input'
 import './TodoCreator.css'
 
 interface Props {

@@ -1,18 +1,13 @@
-import './App.css'
-
+import { useState } from 'react'
+import { Todo } from '../../models/Todo'
 import { AppBar } from '../widgets/AppBar'
 import { Footer } from '../widgets/Footer'
 import { TodoCreator } from '../widgets/TodoCreator'
 import { TodoList } from '../widgets/TodoList'
-
-import { useState } from 'react'
-import { Todo } from '../../models/Todo'
+import './App.css'
 
 export const App = () => {
-  const [todos, setTodos] = useState<Todo[]>([
-    { id: '1', text: 'Hello', done: false, importance: 2 },
-    { id: '2', text: 'World', done: false, importance: 1 },
-  ])
+  const [todos, setTodos] = useState<Todo[]>([])
   const [input, setInput] = useState<string>('')
   const [showAll, setShowAll] = useState<boolean>(false)
   const [sortAscending, setSortAscending] = useState<boolean>(true)

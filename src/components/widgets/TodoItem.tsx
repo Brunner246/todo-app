@@ -1,10 +1,9 @@
-import './TodoItem.css'
-
-import { Button } from 'components/controls/Button'
-import { Checkbox } from 'components/controls/Checkbox'
 import { Fragment } from 'react'
 import { Todo } from '../../models/Todo'
+import { Button } from '../controls/Button'
+import { Checkbox } from '../controls/Checkbox'
 import { Priority } from './Priority'
+import './TodoItem.css'
 
 interface Props {
   todo: Todo

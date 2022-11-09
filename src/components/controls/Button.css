@@ -18,7 +18,13 @@
 }
 
 .remove {
-  background: #e9c46a;
+  width: 2rem;
+  height: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 200%;
+  background: none;
 }
 
 .up {
