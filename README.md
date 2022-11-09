@@ -1,10 +1,20 @@
-# Getting Started with Create React App
+# Todo App <img src="public/logo.svg" align="right" alt="" width="50" />
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Simple [React](https://reactjs.org) based todo application, which was created in the course _Web Engineering 1_ of the MAS in Software Engineering.
+
+The following requirements from the assignment are implemented:
+
+- Create new notes (add button and enter key)
+- Delete notes (remove button)
+- Set note to "done" (checkbox)
+- "Show all" filter (checkbox)
+- Text input for note creation filters existing entries
+- Importance field (clickable symbol "lightning") with editing in the todo list
+- Sort entries by importance and text (done, importance, text) and direction (ascending, descending)
 
 ## Available Scripts
 
-In the project directory, you can run:
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app). In the project directory, you can run:
 
 ### `npm start`
 
@@ -38,6 +48,12 @@ If you aren’t satisfied with the build tool and configuration choices, you can
 Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
 
 You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+
+## Authors
+
+- Alexander Gassmann
+- Michael Brunner @Brunner246
+- Merlin Unterfinger @munterfi
 
 ## Learn More
 
