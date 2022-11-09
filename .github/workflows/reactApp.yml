@@ -1,10 +1,8 @@
 name: React app deployement
 
 on:
-  push:
-    branches: [ gh-pages ]
-  pull_request:
-    branches: [ gh-pages ]
+ push:
+    branches: [ main ]
 
 jobs:
   build:
