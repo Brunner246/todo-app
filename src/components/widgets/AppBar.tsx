@@ -1,10 +1,10 @@
-import todoLogo from '../widgets/todoLogo.svg'
+import Banner from './AppBar.svg'
 import './AppBar.css'
 
 export const AppBar = () => {
   return (
     <header className={'appBar'}>
-      <img src={todoLogo} alt="" />
+      <img src={Banner} alt="" />
     </header>
   )
 }
