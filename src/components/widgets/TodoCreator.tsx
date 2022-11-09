@@ -28,7 +28,6 @@ export const TodoCreator = ({
     if (inputState === 'valid') {
       addTodo(createTodo(input))
       setInput('')
-      return
     }
   }
 

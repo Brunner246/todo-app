@@ -1,12 +1,12 @@
 import './App.css'
 
 import { AppBar } from '../widgets/AppBar'
+import { Footer } from '../widgets/Footer'
 import { TodoCreator } from '../widgets/TodoCreator'
 import { TodoList } from '../widgets/TodoList'
-import { Footer } from '../widgets/Footer'
 
-import { Todo } from '../../models/Todo'
 import { useState } from 'react'
+import { Todo } from '../../models/Todo'
 
 export const App = () => {
   const [todos, setTodos] = useState<Todo[]>([
@@ -19,7 +19,6 @@ export const App = () => {
 
   const addTodo = (todo: Todo) => {
     setTodos([...todos, todo])
-    return
   }
 
   const removeTodo = (todo: Todo) => {

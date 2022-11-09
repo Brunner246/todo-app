@@ -1,5 +1,5 @@
-import './AppBar.css'
 import todoLogo from '../widgets/todoLogo.svg'
+import './AppBar.css'
 
 export const AppBar = () => {
   return (

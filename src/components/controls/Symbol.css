@@ -1,4 +1,4 @@
-.flash {
+.symbol {
   color: white;
 }
 
@@ -6,6 +6,6 @@
   color: #8faadc;
 }
 
-.flash:hover {
-  /* color: white; */
+.symbol:hover {
+  color: #8faadc;
 }
