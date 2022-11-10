@@ -3,7 +3,7 @@ import { Todo } from '../../models/Todo'
 import { Button } from '../controls/Button'
 import { Checkbox } from '../controls/Checkbox'
 import { Priority } from './Priority'
-import './TodoItem.css'
+import { Text } from './Text'
 
 interface Props {
   todo: Todo
@@ -20,7 +20,7 @@ export const TodoItem = ({ todo, updateTodo, removeTodo }: Props) => {
         checked={todo.done}
       ></Checkbox>
       <Priority todo={todo} updateTodo={updateTodo}></Priority>
-      <div className="todo-item-text">{todo.text}</div>
+      <Text checked={todo.done} todo={todo}></Text>
       <Button onClick={() => removeTodo(todo)} buttonType="remove">
         ⛔
       </Button>
