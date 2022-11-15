@@ -9,21 +9,15 @@
 .banner {
   height: 90px;
   pointer-events: none;
+  animation: fadeIn 2s;
+  opacity: 1;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .banner {
-    animation: 1s linear 1s slidein;
-  }
-}
-@keyframes slidein {
+@keyframes fadeIn {
   from {
-    margin-right: 100%;
-    width: 300%;
+    opacity: 0;
   }
-
   to {
-    margin-right: 0%;
-    width: 100%;
+    opacity: 1;
   }
 }
