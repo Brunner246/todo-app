@@ -8,4 +8,22 @@
 
 .banner {
   height: 90px;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .banner {
+    animation: 1s linear 1s slidein;
+  }
+}
+@keyframes slidein {
+  from {
+    margin-right: 100%;
+    width: 300%;
+  }
+
+  to {
+    margin-right: 0%;
+    width: 100%;
+  }
 }
