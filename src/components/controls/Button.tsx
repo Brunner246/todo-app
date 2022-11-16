@@ -1,7 +1,7 @@
 import { ReactNode } from 'react'
 import './Button.css'
 
-type ButtonType = 'add' | 'remove' | 'up' | 'down' | 'edit'
+type ButtonType = 'add' | 'remove' | 'up' | 'down'
 
 interface Props {
   onClick: () => void
